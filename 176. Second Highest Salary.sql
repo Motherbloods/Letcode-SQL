@@ -1,4 +1,16 @@
 -- https://leetcode.com/problems/second-highest-salary/description/
-
 -- # Write your MySQL query statement below
-select ifnull((select DISTINCT salary  from Employee order by salary desc limit 1,1), null) as SecondHighestSalary
+select
+    ifnull (
+        (
+            select DISTINCT
+                salary
+            from
+                Employee
+            order by
+                salary desc
+            limit
+                1, 1
+        ),
+        null
+    ) as SecondHighestSalary
