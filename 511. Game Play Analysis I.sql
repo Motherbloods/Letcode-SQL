@@ -16,5 +16,10 @@ FROM
 WHERE 
     first_login = 1;
 
+SELECT player_id, MIN(event_date) AS first_login
+FROM Activity
+GROUP BY player_id
+ORDER BY player_id;
+
 --Note partition by itu selalu mengambil id nya misal ada tiga id berarti nanti kayak digrouping
     -- ada tiga data gitu
